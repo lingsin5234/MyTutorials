@@ -3,11 +3,10 @@
         <h1>List of Tutorials</h1>
     </div><br>
 
+    {% for t in tutorials %}
     <div class="d-flex justify-content-center">
-        {% for t in tutorials %}
-            <a href="tutorial/md/{{t.filename}}">{{t.name}}</a><br>
-        {% endfor %}
+            <a href="tutorial/md/{{t.filename}}">{{t.name}}</a>
     </div>
-
+    {% endfor %}
     <br>
 {% include 'partials/footer_tutorials.html' %}
