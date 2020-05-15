@@ -5,11 +5,11 @@ The setup is not too difficult. Use SendGrid, which provides 100 emails / month 
 ## SendGrid
 1.  Sign up at SendGrid
 2.  Follow the **Domain Authentication** setup instructions
-![image](uploads/b9f431ddc98f4e50b9598d8a34b3bb7d/image.png)
+![image](/static/img/markdowns/sendgrid1.png)
 
 ## DigitalOcean
 From the setup instructions, there will be a list of DNS records that need to be added. Although sinto-ling.ca is registered with Google Domains, the `name servers` used are Digital Ocean's. In the DO DNS page, under CNAME, add the listed records:
-![image](uploads/0852947cd80146183e98f85ae602a377/image.png)
+![image](/static/img/markdowns/sendgrid2.png)
 
 Wait about 3-5 minutes, then click Verify in SendGrid. Wait and retry if it still doesn't work - it takes a bit of time to populate. Once verified, go back to Django app.
 
@@ -83,7 +83,7 @@ X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
 ```
 
 ### EMAIL RECEIVED
-![image](uploads/8f407abe3071019073c6bcd63cf94a54/image.png)
+![image](/static/img/markdowns/sendgrid3.png)
 
 ## Other Links
 Original Tutorial: [Send Email in Django](https://simpleisbetterthancomplex.com/tutorial/2016/06/13/how-to-send-email.html)  
