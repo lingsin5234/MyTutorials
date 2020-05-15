@@ -54,4 +54,6 @@ def tutorial_markdown(request, filename):
         'page_height': page_height
     }
 
-    return render(request, 'pages/project.html', content)
+    template_page = get_this_template('tutorials', 'project.html')
+
+    return render(request, template_page, content)
