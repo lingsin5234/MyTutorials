@@ -40,14 +40,13 @@ def list_tutorials(request):
 # tutorial pages
 def tutorial_markdown(request, filename):
 
-    page_height = 1050
     loc = 'tutorials/markdowns/' + filename + '.md'
     f = open(loc, 'r')
     if f.mode == 'r':
         readme = f.read()
-        page_height = len(readme)/2 + 200
 
     tutorial_name = Tutorial.objects.get(filename=filename)
+    page_height = tutorial_name.page_height
 
     content = {
         'tutorial_name': tutorial_name,

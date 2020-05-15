@@ -196,7 +196,7 @@ class SignUpForm(UserCreationForm):
 ```
 
 ## Dev Environment Email Sent
-![image](uploads/3011193d2de9171adf407f2f80646eed/image.png)
+![image](/static/img/markdowns/user_registration1.png)
 
 ## Other Reference Links
 [Extend Django User Model](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)  
