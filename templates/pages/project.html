@@ -1,0 +1,23 @@
+{% include 'partials/header_tutorials.html' %}
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>TUTORIAL: {{ tutorial_name }}</h1>
+    </div><br>
+    {% load markdown_extras %}
+    <style>
+        #my_tutorials, #my_tutorials div {
+            height: {{page_height}}px;
+        }
+        #my_tutorials div {
+            width: 580px;
+        }
+        #my_tutorials img {
+            width: 525px !important;
+        }
+    </style>
+    <div id="my_tutorials" class="d-flex justify-content-center">
+        <div>
+            {{ readme | markdown | safe }}
+        </div>
+    </div>
+    <br>
+{% include 'partials/footer_tutorials.html' %}

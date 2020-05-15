@@ -1,0 +1,82 @@
+[
+{
+    "model": "tutorials.tutorial",
+    "pk": 1,
+    "fields": {
+        "name": "GitLab: Personal Token Access",
+        "filename": "per_token_access",
+        "page_height": 450,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 2,
+    "fields": {
+        "name": "Django: Multi-Database",
+        "filename": "multi_db",
+        "page_height": 1875,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 3,
+    "fields": {
+        "name": "Django: Model Constraints",
+        "filename": "model_constraints",
+        "page_height": 450,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 4,
+    "fields": {
+        "name": "Django: Plotly + Dash",
+        "filename": "plotly_dash",
+        "page_height": 2250,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 5,
+    "fields": {
+        "name": "Django: Using Figures in Plotly",
+        "filename": "plotly_figure",
+        "page_height": 850,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 6,
+    "fields": {
+        "name": "Django: SendGrid Email Setup",
+        "filename": "sendgrid_email_setup",
+        "page_height": 3000,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 7,
+    "fields": {
+        "name": "Django: User Registration",
+        "filename": "user_registration",
+        "page_height": 4625,
+        "created_on": "2020-05-14"
+    }
+},
+{
+    "model": "tutorials.tutorial",
+    "pk": 8,
+    "fields": {
+        "name": "Ubuntu: Switching Apache-Nginx Setup",
+        "filename": "switch_nginx_apache",
+        "page_height": 1975,
+        "created_on": "2020-05-14"
+    }
+}
+]

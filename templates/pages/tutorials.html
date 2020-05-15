@@ -1,0 +1,12 @@
+{% include 'partials/header_tutorials.html' %}
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>List of Tutorials</h1>
+    </div><br>
+
+    {% for t in tutorials %}
+    <div class="d-flex justify-content-center">
+            <a href="tutorial/md/{{t.filename}}">{{t.name}}</a>
+    </div>
+    {% endfor %}
+    <br>
+{% include 'partials/footer_tutorials.html' %}
