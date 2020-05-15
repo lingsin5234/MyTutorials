@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.project_markdown),
     re_path(r'^list-tutorials', views.list_tutorials),
-    re_path(r'^tutorial/md/(?P<filename>[a-zA-z_]+)$', views.tutorial_markdown),
+    re_path(r'^tutorials/md/(?P<filename>[a-zA-z_]+)$', views.tutorial_markdown),
 ]
