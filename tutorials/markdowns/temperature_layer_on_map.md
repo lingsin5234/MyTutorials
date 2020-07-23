@@ -28,7 +28,7 @@ This leaves a lot of open space where either:
 
 Once these vector tiles are created (including either method above), then the map will be very flush with the displayed map. Below is an example of the electoral map that uses this method.
 
-![image](/static/img/markdowns/electoral_map.png)
+![electoral-map](/static/img/markdowns/electoral_map.png)
 
 References: 
 

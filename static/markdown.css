@@ -1,0 +1,11 @@
+/*
+*   This file is for customized markdown css
+*   Mainly to add the hover component for images
+*   https://stackoverflow.com/questions/39718782/css-is-it-possible-to-use-img-alt-attribute-for-styling
+*/
+
+img[alt="electoral-map"]::after {
+    display: inline
+    content: "Picture snipped from [MapBox documentation](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)";
+}
+
