@@ -12,16 +12,17 @@ There are a few approaches that I did some research and trial/error for in order
 ### Heatmap
 Despite the well-known term of "heatmap" referring to the temperatures differing in colours layered on top of a map, in the graphical sense, the term refers to mapping density. For example, when mapping population on the map, the clustered (higher density) areas will be "hotter", and the more sparse areas "cooler".
 
-Thus, using the heatmap method does not achieve what we want to do with temperatures, because it does not take the face value of the temperature in to consideration. Rather, it only visualizes the clustering of the weather stations as shown circled in green below.
+Thus, using the heatmap method does not achieve what we want to do with temperatures, because it does not take the face value of the temperature into consideration. Rather, it only visualizes the clustering of the weather stations as shown circled in green below.
 
 ![image](/static/img/markdowns/heatmap_method.JPG)
 
 ------
 
 ### Fill-Color
-Using vector tiles with color fills may be able to achieve this. Assigning an specific area size in some sort of circle or polygon, then providing the temperature, this will be a map of tiles and different colors. A well-known example of this method is the US electoral map, where it shows the lead for the two parties, stronger color meaning that party leads that electoral by a wider margin.
+Using vector tiles with color fills may be able to achieve this. Assigning a specific area size in some sort of circle or polygon, then providing the temperature, this will be a map of tiles and different colors. A well-known example of this method is the US electoral map, where it shows the lead for the two parties, stronger color meaning that party leads that electoral by a wider margin.
 
 This leaves a lot of open space where either:
+
 *  temperature needs to be assigned to the open space tile, OR
 *  closest weather station tile needs to be extended to include that tile as well.
 
@@ -40,7 +41,9 @@ Creating a full size image of the temperature fluctuations and processing it as 
 
 This has both pros and cons, as it requires high backend performance (depending on frequency) and lots of storage, but once the images are generated, they only need to be fetched each time they are needed. This will be very performance friendly for the client (user) side.
 
-As a lot of raster images are created by different mapping companies, this method seems to be very popular.
+As a lot of raster images are created by different mapping companies, this method seems to be very popular. Below is an example of the electoral map that uses this method.
+
+![image](/static/img/markdowns/electoral_map.png)
 
 References: 
 
@@ -50,11 +53,11 @@ References:
 ------
 
 ### Gradient
-Generate a gradient based on the points. This would be data-driven gradient created as a canvas. Then add this canvas to the map so that it is overlayed on top of it. It may not be as clear as what a raster file can provide, however, is more processing-friendly. This method is a bit of a compromise of data visualization precision and performance.
+Generate a colour gradient based on the points. This would be a data-driven gradient created as a canvas. Then add this canvas to the map so that it is overlayed on top of it. It may not be as fine-grained as what a raster file can provide, however, is more processing-friendly. This method is a bit of a compromise between data visualization precision and performance.
 
 Using the GitHub repo: [2D Gradient](https://github.com/dismedia/gradient2d), which calculates and displays gradient on front-end, the canvas generated can be applied to the map.
 
-Dividing the problem into parts: start with some points and generate the gradient between them, then, overlay the canvas on a map and adjust for zoom-ability. Sounds easy? 
+Dividing the problem into parts: start with some points and generate the gradient between them, then, overlay the canvas on a map and adjust for zoom-ability.
 
 References:
 
@@ -64,9 +67,9 @@ References:
 ------
 
 ### Other Notes
-For all methods, in order for the map to still visually appear for the users, the temperature layer on top needs to be somewhat transparent. This mainly set by using `globalAlpha` variable between 0 (fully transparent) and 1 (fully opaque). [W3Schools Reference](https://www.w3schools.com/tags/canvas_globalalpha.asp)
+For all methods, in order for the map to still visually appear for the users, the temperature layer on top needs to be somewhat transparent. This is mainly set by using the canvas `globalAlpha` variable between 0 (fully transparent) and 1 (fully opaque). [W3Schools Reference](https://www.w3schools.com/tags/canvas_globalalpha.asp)
 
-However, for set images, e.g. Raster Image or Gradient method, this needs to be adjusted on the data level. 
+However, for set images, e.g. Raster Image or Gradient method, this needs to be adjusted on the data level by changing the 4th value of each `rgba` set (r, g, b, a).
 
 References:
 
