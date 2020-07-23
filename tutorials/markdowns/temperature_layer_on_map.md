@@ -26,7 +26,9 @@ This leaves a lot of open space where either:
 *  temperature needs to be assigned to the open space tile, OR
 *  closest weather station tile needs to be extended to include that tile as well.
 
-Once these vector tiles are created (including either method above), then the map will be very flush with the displayed map.
+Once these vector tiles are created (including either method above), then the map will be very flush with the displayed map. Below is an example of the electoral map that uses this method.
+
+![image](/static/img/markdowns/electoral_map.png)
 
 References: 
 
@@ -41,9 +43,11 @@ Creating a full size image of the temperature fluctuations and processing it as 
 
 This has both pros and cons, as it requires high backend performance (depending on frequency) and lots of storage, but once the images are generated, they only need to be fetched each time they are needed. This will be very performance friendly for the client (user) side.
 
-As a lot of raster images are created by different mapping companies, this method seems to be very popular. Below is an example of the electoral map that uses this method.
+As a lot of raster images are created by different mapping companies, this method seems to be very popular. Below are examples snipped from MapBox documentation that show the raster images' level of detail depending on the zoom level.
 
-![image](/static/img/markdowns/electoral_map.png)
+[!image](/static/img/markdowns/raster_image_1.JPG)
+
+[!image](/static/img/markdowns/raster_image_2.JPG)
 
 References: 
 
