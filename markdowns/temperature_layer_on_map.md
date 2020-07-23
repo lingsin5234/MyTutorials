@@ -13,7 +13,7 @@ There are a few approaches that I did some research and trial/error for in order
 Despite the well-known term of "heatmap" referring to the temperatures differing in colours layered on top of a map, in the graphical sense, the term refers to mapping density. For example, when mapping population on the map, the clustered (higher density) areas will be "hotter", and the more sparse areas "cooler".
 
 Thus, using the heatmap method does not achieve what we want to do with temperatures, because it does not take the face value of the temperature in to consideration. Rather, it only visualizes the clustering of the weather stations as shown circled in green below.
-![image](/static/img/markdowns/heatmap_method.jpg)
+![image](/static/img/markdowns/heatmap_method.JPG)
 
 ------
 
