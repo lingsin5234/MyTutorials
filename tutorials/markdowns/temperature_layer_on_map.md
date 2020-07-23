@@ -45,9 +45,9 @@ This has both pros and cons, as it requires high backend performance (depending 
 
 As a lot of raster images are created by different mapping companies, this method seems to be very popular. Below are examples snipped from MapBox documentation that show the raster images' level of detail depending on the zoom level.
 
-[!image](/static/img/markdowns/raster_image_1.JPG)
+![image](/static/img/markdowns/raster_image_1.JPG)
 
-[!image](/static/img/markdowns/raster_image_2.JPG)
+![image](/static/img/markdowns/raster_image_2.JPG)
 
 References: 
 
