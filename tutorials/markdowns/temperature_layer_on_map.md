@@ -26,6 +26,7 @@ This leaves a lot of open space where either:
 Once these vector tiles are created (including either method above), then the map will be very flush with the displayed map.
 
 References: 
+
 *  [Data-Driven Fill Styling](https://blog.mapbox.com/data-driven-styling-for-fill-layers-in-mapbox-gl-js-80bb5292af4e)
 *  [Interpolating Temperature from Point Data](https://stackoverflow.com/questions/60859233/generating-a-continuous-interpolated-surface-from-point-data-with-mapbox-gl-js)
 *  MapBox Docs - [Add a Vector Tile Source](https://docs.mapbox.com/mapbox-gl-js/example/vector-source/)
@@ -40,6 +41,7 @@ This has both pros and cons, as it requires high backend performance (depending 
 As a lot of raster images are created by different mapping companies, this method seems to be very popular.
 
 References: 
+
 *  [Raster Maps](https://javascriptstore.com/2017/11/08/raster-maps/)
 *  MapBox Docs - [Add a Raster Tile Source](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)
 
@@ -53,6 +55,7 @@ Using the GitHub repo: [2D Gradient](https://github.com/dismedia/gradient2d), wh
 Dividing the problem into parts: start with some points and generate the gradient between them, then, overlay the canvas on a map and adjust for zoom-ability. Sounds easy? 
 
 References:
+
 *  [Temperature Gradient Maps with MapBox](https://blog.ndustrial.io/temperature-gradient-maps-with-mapbox-gl-9f97fb44d5f2)
 *  MapBox Docs - [Add a Canvas Source](https://docs.mapbox.com/mapbox-gl-js/example/canvas-source/)
 
@@ -64,6 +67,7 @@ For all methods, in order for the map to still visually appear for the users, th
 However, for set images, e.g. Raster Image or Gradient method, this needs to be adjusted on the data level. 
 
 References:
+
 *  [StackOverflow](https://stackoverflow.com/questions/8961009/canvas-globalalpha-doesnt-affect-images)
 *  [Transparency on Canvas](https://www.patrick-wied.at/blog/how-to-create-transparency-in-images-with-html5canvas)
 
@@ -72,4 +76,5 @@ There are a lot of points that are normally fed together as arguments to functio
 `my_function.apply(this, args);`
 
 Reference:
+
 *  [Array as Function Args](https://stackoverflow.com/questions/2856059/passing-an-array-as-a-function-parameter-in-javascript)
