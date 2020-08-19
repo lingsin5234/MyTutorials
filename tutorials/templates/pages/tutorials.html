@@ -3,10 +3,25 @@
         <h1>List of Tutorials</h1>
     </div><br>
 
-    {% for t in tutorials %}
-    <div class="d-flex justify-content-center">
-            <a href="md/{{t.filename}}">{{t.name}}</a>
+    <style>
+        #list-tutorials {
+            font-size: 1.5em;
+        }
+        #list-tutorials br {
+            font-size: 5px;
+        }
+    </style>
+
+
+    <div id="list-tutorials" class="d-flex justify-content-center">
+        <div>
+            {% for t in tutorials %}
+            <div class="d-flex justify-content-left">
+                <a href="md/{{t.filename}}">{{t.name}}</a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
+
     <br>
 {% include 'partials/footer_tutorials.html' %}
