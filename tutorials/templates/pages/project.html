@@ -5,9 +5,12 @@
 
     {% load markdown_extras %}
     <div id="my_tutorials" class="container">
-        <div class="col">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        <!--div class="highlight" kinda works-->
             {{ readme | markdown | safe }}
         </div>
+        <div class="col-md-2"></div>
     </div>
     <br><br>
 {% include 'partials/footer_tutorials.html' %}
