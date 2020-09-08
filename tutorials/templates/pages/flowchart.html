@@ -3,117 +3,39 @@
         <h1>Flowchart: {{ title }}</h1>
     </div><br>
 
-    <!-- flowchart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.14.1/flowchart.min.js"></script>
+    <!-- nomnoml js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nomnoml/0.10.0/nomnoml.min.js"></script>
     <div id="my_flowchart" class="container">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <!-- flowchart contents -->
-            <div style="display: none"><textarea id="code" style="width: 100%;" rows="11">
-                begin=>start: Start
-                finish=>end: End
-
-                io_year=>inputoutput: Select Year
-                op_import1=>operation: Get Files
-                op_import2=>operation: Sort into Folder
-
-                op_extract1=>operation: Extract Team Names
-                op_extract2=>operation: Extract Player Names
-                op_extract3=>operation: Add Names to Database
-
-                op_process_begin=>operation: Process Team Files
-                cond=>condition: All Teams Processed?
-                io_team=>inputoutput: Select Team
-                op_process1=>operation: Loop Through File
-                cond_file=>condition: End of File?
-                cond_play=>condition: Play or Sub?|play_sub
-                cond_pa=>condition: Plate Appearance?|plate_app
-                op_process2=>operation: Process Play
-                op_process3=>operation: Handle Batter
-                op_process4=>operation: Process Non-PA Play
-                op_process5=>operation: Handle Substitution
-                op_process7=>operation: Move Baserunners
-                op_process6=>operation: Record Raw Stats
-                op_process8=>operation: Handle Current Half Inning Variables
-                op_process9=>inputoutput: Next Play
-                op_process_finish=>operation: Ready to Process Next Team
-
-                op_gen_begin=>operation: Generate Player Stats
-                cond_pitching=>condition: Pitching Stats?
-                cond_stats=>condition: Batting or Fielding?
-                op_gen1=>operation: Retrieve Raw Stats
-
-                begin->op_import1->op_import2->op_extract1
-                op_extract1->op_extract2->op_extract3->op_process_begin->cond
-                cond(no)->io_team->op_process1->cond_file
-                cond_file(no)->cond_play
-                cond_file(yes, left)->op_process_finish(top)->cond
-                cond_play(yes, right)->cond_pa
-                cond_pa(yes, right)->op_process2->op_process3->op_process7
-                cond_pa(no)->op_process4->op_process7
-                cond_play(no)->op_process5->op_process7
-                op_process7->op_process8->op_process9(left)->cond_file
-                cond(yes)->0->op_gen_begin->cond_pitching
-                cond_pitching(yes, bottom)->op_gen1
-                cond_pitching(no, right)->cond_stats
-                cond_stats(yes)->op_gen1
-                cond_stats(no)->op_gen1
-
-            </textarea></div>
-            <div id="canvas"></div>
+            <canvas id="canvas"></canvas>
         </div>
         <div class="col-md-2"></div>
     </div>
 
-    <!-- flowchart setup -->
+    <script type="text/vnd.nomnoml">
+        [Pirate|
+          eyeCount: Int|
+          [a]--[b]
+          [a]-:>[c]
+        ]
+        [<abstract>Marauder]<:--[Pirate]
+        [Pirate] - 0..7[<hello>Arrrrrr]
+        [<database>db]->[Pirate]
+        [db]->[rum]
+        [Pirate]-> *[rum]
+        [<start>st]->[<state>plunder]
+        [plunder]->[<choice>loot]
+        [loot]->[st]
+        [loot] no ->[<end>e]
+    </script>
+
     <script>
-
-        window.onload = function () {
-            var btn = document.getElementById("run"),
-                cd = document.getElementById("code"),
-                chart;
-
-            var code = cd.value;
-
-            chart = flowchart.parse(code);
-            chart.drawSVG('canvas', {
-                // 'x': 30,
-                // 'y': 50,
-                'line-width': 3,
-                'maxWidth': 3,//ensures the flowcharts fits within a certian width
-                'line-length': 50,
-                'text-margin': 10,
-                'font-size': 14,
-                'font': 'normal',
-                'font-family': 'Helvetica',
-                'font-weight': 'normal',
-                'font-color': 'black',
-                'line-color': 'black',
-                'element-color': 'black',
-                'fill': 'white',
-                'yes-text': 'yes',
-                'no-text': 'no',
-                'arrow-end': 'block',
-                'scale': 1,
-                'symbols': {
-                    'start': {
-                        'font-color': 'red',
-                        'element-color': 'green',
-                        'fill': 'yellow'
-                    },
-                    'end':{
-                        'class': 'end-element'
-                    }
-                },
-                'flowstate' : {
-                    'play_sub' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'Play', 'no-text' : 'Substitution' },
-                    'plate_app' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'Yes', 'no-text' : 'Non-Plate Appearance' },
-                    'pitching' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'Yes', 'no-text' : 'No' },
-                    'bat_field' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'Batting', 'no-text' : 'Fielding' }
-                }
-            });
-        };
+        var canvas = document.getElementById('canvas');
+        var source = document.querySelector('script[type="text/vnd.nomnoml"]')
+        console.log(source.innerText);
+        nomnoml.draw(canvas, source.innerText);
     </script>
 
     <br><br>
