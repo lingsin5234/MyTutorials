@@ -57,3 +57,16 @@ def tutorial_markdown(request, filename):
     template_page = get_this_template('tutorials', 'project.html')
 
     return render(request, template_page, content)
+
+
+# flowchart page
+def flowchart(request):
+
+    context = {
+        'title': 'Test'
+    }
+
+    template_page = get_this_template('tutorials', 'flowchart.html')
+
+    return render(request, template_page, context)
+

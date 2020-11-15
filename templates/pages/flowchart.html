@@ -1,0 +1,42 @@
+{% include 'partials/header_tutorials.html' %}
+    <div id="my_title" class="d-flex justify-content-center">
+        <h1>Flowchart: {{ title }}</h1>
+    </div><br>
+
+    <!-- nomnoml js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nomnoml/0.10.0/nomnoml.min.js"></script>
+    <div id="my_flowchart" class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <script type="text/vnd.nomnoml">
+        [Pirate|
+          eyeCount: Int|
+          [a]--[b]
+          [a]-:>[c]
+        ]
+        [<abstract>Marauder]<:--[Pirate]
+        [Pirate] - 0..7[<hello>Arrrrrr]
+        [<database>db]->[Pirate]
+        [db]->[rum]
+        [Pirate]-> *[rum]
+        [<start>st]->[<state>plunder]
+        [plunder]->[<choice>loot]
+        [loot]->[st]
+        [loot] no ->[<end>e]
+    </script>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var source = document.querySelector('script[type="text/vnd.nomnoml"]')
+        //console.log(source.innerText);
+        nomnoml.draw(canvas, source.innerText);
+    </script>
+
+    <br><br>
+{% include 'partials/footer_tutorials.html' %}
